@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+  <head>
+    <style>
+      body {
+        background-color: linen;
+        text-align: center;
+      }
+
+      h1 {
+        color: maroon;
+        text-align: center;
+        padding: 60px;
+      }
+
+      header {
+        color: white;
+        background-color: grey;
+        clear: left;
+        text-align: center;
+      }
+
+      nav {
+        float: left;
+        max-width: 160px;
+        margin: 0;
+        padding: 1em;
+        background-color: #C68E17;
+      }
+
+      main {
+        margin-left: 170px;
+        border-left: 1px solid gray;
+        height: auto;
+      }
+      #out{
+        height: auto;
+      }
+
+    </style>
+
+  </head>
+  <body>
+    <div class="container">
+
+      <header> <h1> PING-PONG</h1></header>
+      <nav>
+        <p>
+          <b>created by:</b> James Munyiri <br>
+          <b>Github Username:</b> NjoguMunyiri <br>
+          <i><b>Independent Project #3:</b> Front End Assessment </i>
+        </p>
+      </nav>
+
+      <main>
+        <h1>let's play</h1>
+        <form name="myform" action="" method="get">
+          Enter a number:
+          <input id="num" type="number" name="number">
+          <input type="submit" value="Ping Pong!" onclick="pickinput(this.form)">
+        </form>
+        <hr>
+        <ul id="out"></ul>
+      </main>
+
+    </div>
+    <script>
+
+
+    function pickinput (form) {
+        var x = form.number.value;
+        var disray = [];
+        array.length = x;
+        var text = "";
+
+        for (var i =0; i<=x; i++) {
+
+            if (i%15==0) {
+              disray[i] = "pingpong";
+
+              } else {
+                  if (i%5==0) {
+                      disray[i]="pong";
+
+                    } else {
+                        if (i%3==0) {
+                          disray[i]="ping";
+
+                          } else {
+                            disray[i]=i;
+
+                            }
+
+                        }
+
+                  }
+                  text += disray [i] + "<br>";
+
+
+        }
+
+      return (text+"");
+
+
+      }
+      //document.write(text);
+      document.getElementById('out').innerHTML = (text);
+      </script>
+
+  </body>
+</html>
