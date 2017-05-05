@@ -64,7 +64,7 @@
           <input type="submit" value="Ping Pong!" onclick="pickinput(this.form)">
         </form>
         <hr>
-        <ul id="out"></ul>
+        <div id="out"></div>
       </main>
 
     </div>
@@ -103,9 +103,9 @@
 
         }
 
-        $(#out).append(text);
+        $("#out").append(text);
 
-
+        form.preventDefault();
       });
 
 
