@@ -61,7 +61,7 @@
         <form name="myform" action="" method="get">
           Enter a number:
           <input id="num" type="number" name="number">
-          <input type="submit" value="Ping Pong!" onclick="pickinput(this.form)">
+          <input type="submit" value="Ping Pong!" onclick="function(form)">
         </form>
         <hr>
         <div id="out"></div>
@@ -71,13 +71,16 @@
     <script>
 
 
-    document.ready(function pickinput (form) {
-        var x = form.number.value;
+    $(function(form) {
+      $(form).submit(function(event) {
+
+
+        var x = parseInt($("#num").val());
         var disray = [];
-        array.length = x;
+        disray.length = x;
         var text = "";
 
-        for (var i =0; i<=x; i++) {
+        for (var i=0; i<=x; i++) {
 
             if (i%15==0) {
               disray[i] = "pingpong";
@@ -98,14 +101,18 @@
                         }
 
                   }
+
                   text += disray [i] + "<br>";
-                  return (text);
+
+
+
 
         }
 
         $("#out").append(text);
 
-        form.preventDefault();
+        event.preventDefault();
+        });
       });
 
 
