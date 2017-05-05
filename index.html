@@ -34,6 +34,7 @@
       }
       #out{
         height: auto;
+        display: none;
       }
 
     </style>
@@ -110,6 +111,7 @@
         }
 
         $("#out").append(text);
+        $("#out").fadeIn(1500);
 
         event.preventDefault();
         });
